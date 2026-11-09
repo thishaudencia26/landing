@@ -1,0 +1,201 @@
+/* Importing Google fonts */
+@import url("https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:300,400,700");
+
+/* Importing component files */
+@import url("components/avatar.css");
+@import url("components/banner.css");
+@import url("components/button.css");
+
+/* ===== General style rules for fonts and colors ===== */
+body {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: #33415c;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #f7f9fc;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ===== Banner ===== */
+.banner {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  padding: 20px;
+  /* Dark filter + image, so the white text stays readable */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/ciel.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.banner h1 {
+  color: white;
+  font-size: 50px;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);   /* shadow on "Change your life" */
+}
+
+.banner h2 {
+  color: whitesmoke;
+  font-size: 30px;
+  font-weight: lighter;
+  margin: 0 0 16px 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);   /* shadow on "Beyond your borders" */
+}
+
+
+.plans {
+  display: flex;
+  padding: 0 0 80px 0;   /* no side spacing, like the banner */
+}
+
+/* Newsletter card: full width, like the banner */
+.plans .card {
+  flex-grow: 1;          /* takes all the available width */
+  text-align: center;
+  border-radius: 0;      /* square corners, aligned with the banner edges */
+}
+
+
+
+
+
+/* ===== Layout ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+}
+
+.hero {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 40px 80px 40px;
+}
+
+.footer {
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* ===== Button: shared shape ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Primary variant: filled blue */
+.btn-primary {
+  background-color: #2f6fed;
+  color: #ffffff;
+}
+
+/* Secondary variant: blue outline */
+.btn-secondary {
+  color: #2f6fed;
+  border: 2px solid #2f6fed;
+  padding: 12px 26px; /* minus the 2px border, so it matches .btn-primary */
+}
+
+/* Hover state: yellow, with dark text to stay readable */
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #f5c518;
+  color: #33415c;
+  border-color: #f5c518;
+}
+
+/* ===== Tag: separate component ===== */
+.tag {
+  display: inline-block;
+  background-color: #e8efff;
+  color: #2f6fed;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ===== Card: shared by plans and destinations ===== */
+.card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Plans cards only: centered content */
+.plans .card {
+  text-align: center;
+}
+
+/* ===== Destinations grid ===== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  padding: 0 40px 80px 40px;
+}
+
+/* Destination cards only: image on the left, title on the right */
+.cards .card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Photos: same size, rounded corners, never stretched */
+.cards .card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.cards .card h3 {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+/* ===== Phones ===== */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .banner h1 {
+    font-size: 32px;
+  }
+
+  .banner h2 {
+    font-size: 20px;
+  }
+}
+}
